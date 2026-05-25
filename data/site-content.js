@@ -117,62 +117,62 @@ export const certifications = [
   {
     title: "ISO 9001",
     type: "Kvalita",
-    image: "https://www.inrestsro.sk/wp-content/uploads/ISO-9001-SK_platne_page-0001-1.jpg",
+    image: "/certs/iso-9001-sk.jpg",
   },
   {
     title: "ISO 14001",
     type: "Ekológia",
-    image: "https://www.inrestsro.sk/wp-content/uploads/ISO-14001-SK_platne_page-0001.jpg",
+    image: "/certs/iso-14001-sk.jpg",
   },
   {
     title: "ISO 45001",
     type: "BOZP",
-    image: "https://www.inrestsro.sk/wp-content/uploads/ISO-45001-SK_platne_page-0001.jpg",
+    image: "/certs/iso-45001-sk.jpg",
   },
   {
     title: "Dôveryhodná firma",
     type: "Reputácia",
-    image: "https://www.inrestsro.sk/wp-content/uploads/2020-10-16-Certifikat-doveryhodna-firma.jpg",
+    image: "/certs/2020-10-16-Certifikat-doveryhodna-firma.jpg",
   },
   {
     title: "Bauder Certifikát",
     type: "Partnerstvo",
-    image: "https://www.inrestsro.sk/wp-content/uploads/Bauder-1.jpg",
+    image: "/certs/cert-bauder.jpg",
   },
   {
     title: "Dun & Bradstreet",
     type: "Stabilita",
-    image: "https://www.inrestsro.sk/wp-content/uploads/Certifikat-Dun-Bradstreet.jpg",
+    image: "/certs/Certifikat-Dun-Bradstreet.jpg",
   },
   {
     title: "Sika Solution",
     type: "Partnerstvo",
-    image: "https://www.inrestsro.sk/wp-content/uploads/certifikat-sika-1.jpg",
+    image: "/certs/certifikat-sika-1.jpg",
   },
   {
     title: "BMI Icopal",
     type: "Partnerstvo",
-    image: "https://www.inrestsro.sk/wp-content/uploads/BMI-2.jpg",
+    image: "/certs/BMI-2.jpg",
   },
   {
     title: "Trimo Partner",
     type: "Partnerstvo",
-    image: "https://www.inrestsro.sk/wp-content/uploads/Trimo-academy-certificate.jpg",
+    image: "/certs/Trimo-academy-certificate.jpg",
   },
   {
     title: "Elevate Holcim",
     type: "Partnerstvo",
-    image: "https://www.inrestsro.sk/wp-content/uploads/certifikat-elevate-1.jpg",
+    image: "/certs/certifikat-elevate-1.jpg",
   },
   {
     title: "KVK Certifikát",
     type: "Materiály",
-    image: "https://www.inrestsro.sk/wp-content/uploads/kvk-1-scaled.jpg",
+    image: "/certs/kvk-1-scaled.jpg",
   },
   {
     title: "Satjam Expert",
     type: "Partnerstvo",
-    image: "https://www.inrestsro.sk/wp-content/uploads/Certifikat-Satjam.jpg",
+    image: "/certs/Certifikat-Satjam.jpg",
   },
 ];
 

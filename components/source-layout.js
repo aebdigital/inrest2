@@ -21,11 +21,9 @@ export function SourceHero({ title, image }) {
         <div className="absolute inset-0 bg-black/60" />
       </div>
       <div className="shell relative z-10 flex h-full items-end pb-12">
-        <Reveal>
-          <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
-            {title}
-          </h1>
-        </Reveal>
+        <h1 className="text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+          {title}
+        </h1>
       </div>
     </section>
   );
@@ -46,30 +44,17 @@ export function SidebarShell({ kicker, title, description, image, items, activeS
               {items.map((item) => {
                 const href = item.slug ? `${basePath}/${item.slug}` : basePath;
                 const isActive = activeSlug === item.slug;
-                const previewImage = item.projects?.[0]?.gallery?.[0] || item.image || "/media/hero.jpg";
 
                 return (
                   <Link 
                     key={item.slug} 
                     href={href} 
-                    className={`group relative flex-shrink-0 w-[160px] lg:w-full overflow-hidden border border-line/30 rounded-xl transition-all hover:border-accent/40 ${isActive ? "border-accent/50 shadow-md ring-2 ring-accent/10" : ""}`}
+                    className={`filter-tab group ${isActive ? "is-active" : ""}`}
                   >
-                    <div className="relative aspect-[16/9] lg:aspect-[16/4] w-full overflow-hidden bg-black">
-                      <Image 
-                        src={previewImage} 
-                        alt={item.title} 
-                        fill 
-                        className={`object-cover transition-all duration-700 ${isActive ? "grayscale-0 scale-105" : "grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-80 group-hover:scale-110"}`} 
-                        sizes="(max-width: 1024px) 160px, 300px"
-                        priority={isActive}
-                      />
-                      <div className={`absolute inset-0 transition-colors duration-500 ${isActive ? "bg-black/10" : "bg-black/50 group-hover:bg-black/30"}`} />
-                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none p-2">
-                        <span className={`text-center text-[9px] sm:text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all duration-500 ${isActive ? "opacity-100 scale-105" : "opacity-90 group-hover:opacity-100 group-hover:scale-110"}`}>
-                          {item.title}
-                        </span>
-                      </div>
-                    </div>
+                    <span>{item.title}</span>
+                    <span className={`hidden lg:inline-flex items-center justify-center transition-all duration-300 font-bold ${isActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"}`}>
+                      &rarr;
+                    </span>
                   </Link>
                 );
               })}

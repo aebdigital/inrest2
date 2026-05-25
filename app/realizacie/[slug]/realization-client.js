@@ -17,15 +17,25 @@ export function RealizationClient({ page, realizationPages }) {
       basePath="/realizacie"
     >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {page.projects && page.projects.map((project, pIdx) => (
-          <Reveal key={`p2-${pIdx}`} delay={pIdx * 50}>
-            <Link 
-              href={`/realizacie/${page.slug}/${pIdx}`}
-              className="group flex flex-col border border-line/10 bg-white transition-all hover:border-accent/40"
+        {page.projects && page.projects.map((project, pIdx) => {
+          const originalSrc = project.gallery[0];
+          const previewSrc = originalSrc && originalSrc.startsWith("/projects/") 
+            ? originalSrc.replace("/projects/", "/projects/previews/") 
+            : originalSrc;
+
+          return (
+            <div 
+              key={`p2-${pIdx}`} 
+              className="css-stagger-item animate-duration-500"
+              style={{ animationDelay: `${pIdx * 35}ms` }}
             >
-              <div className="relative aspect-square overflow-hidden bg-zinc-100">
-                <Image 
-                  src={project.gallery[0]} 
+              <Link 
+                href={`/realizacie/${page.slug}/${pIdx}`}
+                className="group flex flex-col border border-line/10 bg-white transition-all hover:border-accent/40"
+              >
+                <div className="relative aspect-square overflow-hidden bg-zinc-100">
+                  <Image 
+                    src={previewSrc} 
                   alt={project.title} 
                   fill 
                   className="object-cover transition-all duration-700 group-hover:scale-110" 
@@ -40,8 +50,8 @@ export function RealizationClient({ page, realizationPages }) {
                 </div>
               </div>
             </Link>
-          </Reveal>
-        ))}
+          </div>
+        )})}
       </div>
 
       <Reveal className="source-panel mt-16">

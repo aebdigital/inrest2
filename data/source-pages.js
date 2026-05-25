@@ -145,7 +145,7 @@ export const realizationPages = [
     "image": "/projects/realizacie/IMG_20190819_102206.jpg",
     "projects": [
       {
-        "title": "Projekt: Oakwood – Bytča – 09/2025",
+        "title": "Oakwood – Bytča – 09/2025",
         "gallery": [
           "/projects/realizacie/IMG-20250925-WA0018.jpg",
           "/projects/realizacie/IMG-20250925-WA0014.jpg",
@@ -154,7 +154,7 @@ export const realizationPages = [
         ]
       },
       {
-        "title": "Projekt: Winkelmann – Rimavská Sobota – Metrostav Slovakia a.s",
+        "title": "Winkelmann – Rimavská Sobota – Metrostav Slovakia a.s",
         "gallery": [
           "/projects/realizacie/IMG_20250411_123632-scaled.jpg",
           "/projects/realizacie/IMG_20250604_142333-scaled.jpg",
@@ -165,7 +165,7 @@ export const realizationPages = [
         ]
       },
       {
-        "title": "Projekt: Matador Kopčianka – Metrostav",
+        "title": "Matador Kopčianka – Metrostav",
         "gallery": [
           "/projects/realizacie/20220216_111032.jpg",
           "/projects/realizacie/20220215_120418.jpg",
@@ -187,7 +187,7 @@ export const realizationPages = [
         ]
       },
       {
-        "title": "Projekt – Jaguár Land Rover Nitra – Tunnels TAKENAKA",
+        "title": "Jaguár Land Rover Nitra – Tunnels TAKENAKA",
         "gallery": [
           "/projects/realizacie/20211105_140609.jpg",
           "/projects/realizacie/20211029_123354.jpg",
@@ -206,7 +206,7 @@ export const realizationPages = [
         ]
       },
       {
-        "title": "Projekt: Vaillant Senica Goldbeck, s.r.o.",
+        "title": "Vaillant Senica Goldbeck, s.r.o.",
         "gallery": [
           "/projects/realizacie/20220823_114925.jpg",
           "/projects/realizacie/20220816_101444.jpg",
@@ -391,7 +391,7 @@ export const realizationPages = [
     "image": "/projects/realizacie/IMG_20250411_123632-scaled.jpg",
     "projects": [
       {
-        "title": "Projekt: Volvo – Košice – Takenaka Europe GmbH – 3/2024 – 1/2026",
+        "title": "Volvo – Košice – Takenaka Europe GmbH – 3/2024 – 1/2026",
         "gallery": [
           "/projects/realizacie/IMG-20250721-WA0018.jpg",
           "/projects/realizacie/IMG-20250721-WA0014.jpg",
@@ -404,7 +404,7 @@ export const realizationPages = [
         ]
       },
       {
-        "title": "Projekt – Billa Tomášov – DOSA Slovakia, s.r.o. – 08/2025",
+        "title": "Billa Tomášov – DOSA Slovakia, s.r.o. – 08/2025",
         "gallery": [
           "/projects/realizacie/IMG_20251006_104238-scaled.jpg",
           "/projects/realizacie/IMG_20251006_102620-scaled.jpg",
@@ -414,7 +414,7 @@ export const realizationPages = [
         ]
       },
       {
-        "title": "Projekt: Continental Púchov – MONOLIT Slovakia, s.r.o. – 07/2025",
+        "title": "Continental Púchov – MONOLIT Slovakia, s.r.o. – 07/2025",
         "gallery": [
           "/projects/realizacie/IMG-20250723-WA0011.jpg",
           "/projects/realizacie/IMG_20250725_084059-scaled.jpg",
@@ -422,7 +422,7 @@ export const realizationPages = [
         ]
       },
       {
-        "title": "Projekt: Winkelmann – Rimavská Sobota – Metrostav Slovakia a.s. 12.2024 – 12.2025",
+        "title": "Winkelmann – Rimavská Sobota – Metrostav Slovakia a.s. 12.2024 – 12.2025",
         "gallery": [
           "/projects/realizacie/IMG_20250916_101800-scaled.jpg",
           "/projects/realizacie/IMG_20250916_102345-scaled.jpg",
@@ -433,7 +433,7 @@ export const realizationPages = [
         ]
       },
       {
-        "title": "Projekt: Prologis Senec Goldbeck 3.2022 – 8.2022",
+        "title": "Prologis Senec Goldbeck 3.2022 – 8.2022",
         "gallery": [
           "/projects/realizacie/20220324_134351.jpg",
           "/projects/realizacie/20220412_133231.jpg",
@@ -456,7 +456,7 @@ export const realizationPages = [
         ]
       },
       {
-        "title": "Projekt – Logisticko dodávateľské centrum Trnava Fáza II – Swietelsky-Slovakia spol. s r.o. – 06-09 2022",
+        "title": "Logisticko dodávateľské centrum Trnava Fáza II – Swietelsky-Slovakia spol. s r.o. – 06-09 2022",
         "gallery": [
           "/projects/realizacie/20221129_145707.jpg",
           "/projects/realizacie/20221129_145542.jpg",
@@ -470,7 +470,7 @@ export const realizationPages = [
         ]
       },
       {
-        "title": "Projekt: SKLAD SUROVÍN, HARMANEC-KUVERT Brezno – 2022",
+        "title": "SKLAD SUROVÍN, HARMANEC-KUVERT Brezno – 2022",
         "gallery": [
           "/projects/realizacie/20221021_122618.jpg",
           "/projects/realizacie/20220923_115725.jpg",
@@ -501,7 +501,7 @@ export const realizationPages = [
         ]
       },
       {
-        "title": "Projekt: Big George Goldbeck, s.r.o. Maďarsko 2023",
+        "title": "Big George Goldbeck, s.r.o. Maďarsko 2023",
         "gallery": [
           "/projects/realizacie/20230125_125025.jpg",
           "/projects/realizacie/20230125_124720.jpg",
@@ -512,7 +512,7 @@ export const realizationPages = [
         ]
       },
       {
-        "title": "Projekt: Vaillant Senica Goldbeck, s.r.o. 08/2022 – 06/2023",
+        "title": "Vaillant Senica Goldbeck, s.r.o. 08/2022 – 06/2023",
         "gallery": [
           "/projects/realizacie/20230630_115337.jpg",
           "/projects/realizacie/20230630_114344.jpg",
@@ -533,7 +533,7 @@ export const realizationPages = [
         ]
       },
       {
-        "title": "Projekt – Jaguár Land Rover Nitra – Tunnels TAKENAKA august – november 2021",
+        "title": "Jaguár Land Rover Nitra – Tunnels TAKENAKA august – november 2021",
         "gallery": [
           "/projects/realizacie/aaa20210906_172139.jpg",
           "/projects/realizacie/20211203_133546.jpg",
@@ -550,7 +550,7 @@ export const realizationPages = [
         ]
       },
       {
-        "title": "Projekt: SHP Harmanec september 2021",
+        "title": "SHP Harmanec september 2021",
         "gallery": [
           "/projects/realizacie/20210927_143756.jpg",
           "/projects/realizacie/20211009_112223.jpg",

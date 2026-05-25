@@ -2,6 +2,8 @@ import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 import { SourceHero } from "@/components/source-layout";
 import { absoluteUrl, siteConfig } from "@/lib/site";
+import { ContactForm } from "@/components/contact-form";
+
 
 export const metadata = {
   title: "Kontakt",
@@ -127,6 +129,11 @@ export default function KontaktPage() {
                 </div>
               </div>
             </Reveal>
+          </div>
+
+          {/* Contact Form Section */}
+          <div className="max-w-4xl mx-auto">
+            <ContactForm />
           </div>
 
           {/* Maps Section */}

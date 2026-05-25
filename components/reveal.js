@@ -2,11 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export function Reveal({ as: Tag = "div", className = "", delay = 0, children }) {
+export function Reveal({ as: Tag = "div", className = "", delay = 0, instant = false, children, ...props }) {
   const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(instant);
 
   useEffect(() => {
+    if (instant) return;
     const node = ref.current;
     if (!node) return;
 
@@ -25,7 +26,7 @@ export function Reveal({ as: Tag = "div", className = "", delay = 0, children })
 
     observer.observe(node);
     return () => observer.disconnect();
-  }, []);
+  }, [instant]);
 
   return (
     <Tag
@@ -34,6 +35,7 @@ export function Reveal({ as: Tag = "div", className = "", delay = 0, children })
       style={{ 
         transitionDelay: `${delay}ms`,
       }}
+      {...props}
     >
       {children}
     </Tag>
