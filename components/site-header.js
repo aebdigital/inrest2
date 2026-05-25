@@ -8,8 +8,8 @@ import { servicePages } from "@/data/source-pages";
 
 const navItems = [
   { href: "/", label: "Úvod" },
-  { href: "/sluzby", label: "Služby" },
-  { href: "/realizacie", label: "Realizácie" },
+  { href: "/sluzby/oplastenia-budov", label: "Služby" },
+  { href: "/realizacie/oplastenia-budov", label: "Realizácie" },
   { href: "/certifikaty", label: "Certifikáty" },
   { href: "/o-nas", label: "O nás" },
   { href: "/kontakt", label: "Kontakt" },
@@ -22,10 +22,25 @@ import { motion, AnimatePresence } from "framer-motion";
 export function SiteHeader() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   // Close menu on navigation
   useEffect(() => {
     setIsOpen(false);
+  }, [pathname]);
+
+  // Track scroll position on the homepage
+  useEffect(() => {
+    if (pathname !== "/") return;
+    const handleScroll = () => {
+      if (window.scrollY > 80) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
   // Prevent scroll when menu is open
@@ -42,7 +57,7 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="fixed top-0 z-50 w-full max-w-full bg-white/95 border-b border-line backdrop-blur-md shadow-sm">
+      <header className={`fixed top-0 z-50 w-full max-w-full bg-white/95 border-b border-line backdrop-blur-md shadow-sm transition-all duration-300 ${pathname === "/" ? (scrolled ? "lg:translate-y-0 lg:opacity-100" : "lg:-translate-y-full lg:opacity-0 lg:pointer-events-none") : ""}`}>
         {/* Top Bar */}
         <div className="hidden lg:block bg-[#004a99] text-white/90 py-2.5 text-[11px] font-bold uppercase tracking-[0.1em]">
           <div className="shell flex justify-end items-center gap-8">
@@ -72,8 +87,11 @@ export function SiteHeader() {
           {/* Desktop Nav */}
           <nav className="hidden items-center gap-8 text-[13px] font-black uppercase tracking-[0.12em] text-foreground lg:flex">
             {navItems.filter(item => item.label !== "Kontakt").map((item) => {
-              const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
               const isServices = item.label === "Služby";
+              const isRealizacie = item.label === "Realizácie";
+              const isActive = pathname === item.href || 
+                (isServices && pathname.startsWith("/sluzby")) ||
+                (isRealizacie && pathname.startsWith("/realizacie"));
               
               return (
                 <div key={item.href} className="group relative">
@@ -179,8 +197,11 @@ export function SiteHeader() {
               
               <div className="flex flex-col gap-6 overflow-y-auto pr-4 scrollbar-hide pb-10">
                 {navItems.map((item, idx) => {
-                  const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
                   const isServices = item.label === "Služby";
+                  const isRealizacie = item.label === "Realizácie";
+                  const isActive = pathname === item.href || 
+                    (isServices && pathname.startsWith("/sluzby")) ||
+                    (isRealizacie && pathname.startsWith("/realizacie"));
                   
                   return (
                     <motion.div
