@@ -3,3 +3,9 @@ node_modules
 out
 .DS_Store
 npm-debug.log*
+
+# cloudflare
+/.open-next/
+/.wrangler/
+.dev.vars*
+cloudflare-env.d.ts

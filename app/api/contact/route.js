@@ -1,18 +1,14 @@
+export const runtime = "nodejs";
+
 const headers = {
   "Content-Type": "application/json; charset=utf-8",
   "Cache-Control": "no-store",
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
-  "Access-Control-Allow-Headers": "Content-Type",
 };
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function json(payload, status = 200) {
-  return new Response(JSON.stringify(payload), {
-    status,
-    headers,
-  });
+  return new Response(JSON.stringify(payload), { status, headers });
 }
 
 function clean(value, limit = 5000) {
@@ -33,19 +29,9 @@ function escapeHtml(value) {
 
 function validatePayload(payload) {
   const errors = {};
-
-  if (payload.name.length < 2) {
-    errors.name = "Zadajte meno.";
-  }
-
-  if (!EMAIL_PATTERN.test(payload.email)) {
-    errors.email = "Zadajte platný e-mail.";
-  }
-
-  if (payload.message.length < 12) {
-    errors.message = "Správa musí mať aspoň 12 znakov.";
-  }
-
+  if (payload.name.length < 2) errors.name = "Zadajte meno.";
+  if (!EMAIL_PATTERN.test(payload.email)) errors.email = "Zadajte platný e-mail.";
+  if (payload.message.length < 12) errors.message = "Správa musí mať aspoň 12 znakov.";
   return errors;
 }
 
@@ -75,21 +61,14 @@ function buildHtmlBody(payload) {
   `;
 }
 
-export default async (req) => {
-  if (req.method === "OPTIONS") {
-    return new Response(null, {
-      status: 204,
-      headers,
-    });
-  }
+export async function OPTIONS() {
+  return new Response(null, { status: 204, headers });
+}
 
-  if (req.method !== "POST") {
-    return json({ ok: false, message: "Method not allowed." }, 405);
-  }
-
-  const apiKey = Netlify.env.get("SMTP2GO_API_KEY");
-  const recipient = Netlify.env.get("CONTACT_FORM_RECIPIENT");
-  const sender = Netlify.env.get("SMTP2GO_SENDER");
+export async function POST(req) {
+  const apiKey = process.env.SMTP2GO_API_KEY;
+  const recipient = process.env.CONTACT_FORM_RECIPIENT;
+  const sender = process.env.SMTP2GO_SENDER;
 
   if (!apiKey || !recipient || !sender) {
     return json(
@@ -103,7 +82,6 @@ export default async (req) => {
   }
 
   let requestData;
-
   try {
     requestData = await req.json();
   } catch {
@@ -120,21 +98,13 @@ export default async (req) => {
   };
 
   if (payload.website) {
-    return json({
-      ok: true,
-      message: "Dakujeme, sprava bola prijata.",
-    });
+    return json({ ok: true, message: "Dakujeme, sprava bola prijata." });
   }
 
   const errors = validatePayload(payload);
-
   if (Object.keys(errors).length > 0) {
     return json(
-      {
-        ok: false,
-        message: "Skontrolujte prosim formular.",
-        errors,
-      },
+      { ok: false, message: "Skontrolujte prosim formular.", errors },
       400
     );
   }
@@ -153,14 +123,8 @@ export default async (req) => {
       text_body: buildTextBody(payload),
       html_body: buildHtmlBody(payload),
       custom_headers: [
-        {
-          header: "Reply-To",
-          value: payload.email,
-        },
-        {
-          header: "X-INREST-Source",
-          value: "website-contact-form",
-        },
+        { header: "Reply-To", value: payload.email },
+        { header: "X-INREST-Source", value: "website-contact-form" },
       ],
     }),
   });
@@ -183,4 +147,4 @@ export default async (req) => {
     ok: true,
     message: "Dakujeme, sprava bola odoslana. Ozveme sa vam co najskor.",
   });
-};
+}
