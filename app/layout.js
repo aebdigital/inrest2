@@ -1,3 +1,4 @@
+import JsonLd from "../components/JsonLd";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import { Manrope, Space_Grotesk } from "next/font/google";
 import "./globals.css";
@@ -94,6 +95,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="sk">
       <body className={`${bodyFont.variable} ${headingFont.variable}`}>
+        <JsonLd />
         {children}
         <CookieCompliance />
         <SiteFooter />
